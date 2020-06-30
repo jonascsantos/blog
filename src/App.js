@@ -1,10 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Spacer = styled.div`
-  padding-left: 2vw;
-`
-
 const SimpleComponent = () => (
   <div>
     <p>This is a simple blog</p>
