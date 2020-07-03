@@ -18,14 +18,21 @@ const ClickHandler = name => {
   })
 }
 
-var megamenuTimingStart = +new Date();
+var megamenuTimingStart = +new Date()
 
 const sendTiming = label => {
-  var megamenuTimingEnd = +new Date();
-  var diff = Math.round((megamenuTimingEnd - megamenuTimingStart));
-  console.log(diff, ': ', label);
-  var ga = ReactGa.ga();
-  ga('send', 'event', 'Megamenu','Click_TimeToAction', label, diff);
+  var megamenuTimingEnd = +new Date()
+  var diff = Math.round(megamenuTimingEnd - megamenuTimingStart)
+  console.log(diff, ': ', label)
+  //var ga = ReactGa.ga()
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({
+    'event': 'item-click',
+    'eventLabel': label,
+    'eventValue': diff
+  })
+
+  //ga('send', 'event', 'Megamenu', 'Click_TimeToAction', label, diff)
 }
 
 function App() {
