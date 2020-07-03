@@ -42,12 +42,12 @@ var megamenuTimingStart = +new Date()
 const sendTiming = label => {
   var megamenuTimingEnd = +new Date()
   var diff = Math.round(megamenuTimingEnd - megamenuTimingStart)
-  window.dataLayer = window.dataLayer || []
-  window.dataLayer.push({
-    'event': 'item-click',
-    'eventLabel': label,
-    'eventValue': diff
-  })
+  if(window.dataLayer)
+    window.dataLayer.push({
+      'event': 'item-click',
+      'eventLabel': label,
+      'eventValue': diff
+    })
 }
 const sendEvent = label => {
   if(window.dataLayer)
