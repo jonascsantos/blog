@@ -59,6 +59,7 @@ const sendEvent = label => {
 function App() {
   useEffect(() => {
     ReactGa.initialize('UA-152578899-1')
+    ReactGa.ga('set', 'exp', '9wDfYnldTQKFqvMPEdqBvA.1');
     ReactGa.pageview('/')
   }, [])
 
