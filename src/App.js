@@ -25,8 +25,8 @@ const Users = () => (
 )
 const Home = () => (
   <div>
-    <p>Home</p>
-    <button onClick={() => sendEvent('HomeButton')}>Home Button</button>
+    <p>Resume</p>
+    <button onClick={() => sendEvent('Resume')}>Resume</button>
   </div>
 )
 
